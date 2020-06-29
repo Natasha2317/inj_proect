@@ -20,7 +20,7 @@
         <div>
         <form class="lk_menu" method="post">
             <div class="form__name_button">
-                <button><a href="lk.php">Назад</a></button>
+                <button><a href="#" onclick="history.back();">Назад</a></button>
             </div>
             <div class="form__name_button">
                 <button><a href="exit.php">Выйти</a></button>
@@ -49,18 +49,27 @@
         if( isset($_GET['id']) ) // (переход по ссылке или отправка формы)
         {
             $get_id = $_GET['id'];
+            if ($name_session = 'admin'){
+                $query = $mysqli->query("SELECT * FROM poems JOIN author ON poems.id_author=author.id_author WHERE id_poem='$get_id'");
+                $currentROW=mysqli_fetch_row($query);
+            }else{
             // выполняем поиск записи по ее id
             $query = $mysqli->query("SELECT * FROM poems JOIN author ON poems.id_author=author.id_author WHERE id_poem='$get_id' and name_author='$name_session'");
-            $currentROW=mysqli_fetch_row($query); // информация сохраняется
-        }
+            $currentROW=mysqli_fetch_row($query); }// информация сохраняется
+            }
         if( !$currentROW ) // если информации о текущей записи нет или она некорректна
         {
+            if ($name_session = 'admin'){
+                $query = $mysqli->query("SELECT * FROM poems JOIN author ON poems.id_author=author.id_author");
+                $currentROW=mysqli_fetch_row($query);
+            }
+            else{
             // берем первую запись из таблицы и делаем ее текущей
-            $query = $mysqli->query("SELECT * FROM poems JOIN author ON poems.id_author=author.id_author WHERE name_author='$name_session'");
-            $currentROW=mysqli_fetch_row($query);
+            $query = $mysqli->query("SELECT * FROM poems JOIN author ON poems.id_author=author.id_author");
+            $currentROW=mysqli_fetch_row($query);}
         }
         // формируем и выполняем запрос для получения требуемых полей всех записей таблицы
-        $query = $mysqli->query("SELECT * FROM poems JOIN author ON poems.id_author=author.id_author WHERE name_author='$name_session'");
+        $query = $mysqli->query("SELECT * FROM poems JOIN author ON poems.id_author=author.id_author");
         if($query) // если запрос успешно выполнен
         {
             while( $row=mysqli_fetch_row($query) ) // перебираем все записи выборки

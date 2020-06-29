@@ -20,7 +20,7 @@
     <?php
      if(!isset($_COOKIE['user'])):
     ?>
-    <h2>Регистрация</h2>
+    <h2>Регистрация</h2><h2 class="warning">Ввод без пробелов!</h2>
     <div class="form">
         <form action="" method="post">
         <div class="form__name">

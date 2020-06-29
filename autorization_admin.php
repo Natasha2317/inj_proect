@@ -61,7 +61,6 @@ if (isset($_POST['in_admin'])){
         prinf("Соединение не установлено", mysqli_connect_error());
         exit();
     }
-    $password = md5($password."dekdlmkldml");
     $query = $mysqli->query("SELECT * FROM users WHERE name_user='$admin' AND password='$password'") ;
     $user = $query->fetch_assoc();
     if (!$user) {

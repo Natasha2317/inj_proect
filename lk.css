@@ -13,6 +13,7 @@
 }
 .header_poem{
     margin-left: 10px;
+    text-align: center;
 }
 .my_poems{
     text-align: center;
@@ -27,7 +28,7 @@ h2{
 }
 fieldset{
     border: none;
-    margin-top: 30px;
+    margin-top: 0px;
 }
 fieldset > legend{
     text-align: center;
@@ -148,7 +149,7 @@ table{
         margin-right: 13px;
     }
     .my_poems{
-        font-size: 10px;
+        font-size: 5.5px;
         width: 90%;
     }
     table{

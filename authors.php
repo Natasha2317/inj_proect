@@ -13,7 +13,7 @@
             <a href="index.php" aria-current="page" role="menuitem">Главная</a>
             <a href="category.php" role="menuitem">Категории</a>
             <a href="authors.php" role="menuitem">Авторы</a>
-            <a href="registr.php" role="menuitem"><span class="visually-hidden">Текущий пункт:</span>Мой кабинет</a>
+            <a href="registr.php" role="menuitem"><span class="visually-hidden">Текущий пункт:</span>Личный кабинет</a>
         </nav>
     </header>
     <?php

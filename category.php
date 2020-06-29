@@ -77,9 +77,8 @@
                 <h3>'.$row['name_poem'].'</h3><br>
                 <pre><p>'.$row['text_poem'].'</p></pre><br>
                 <p>'.$row['name_author'].'</p>
-            </div>';
+            </div>';}
             $mysqli->close();
-    }
     ?>
     </main>
 </body>
