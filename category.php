@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="lk.css?<?php echo time();?>">
-  	<link href="https://fonts.googleapis.com/css?family=PT+Sans|Playfair+Display+SC" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=PT+Sans|Playfair+Display+SC" rel="stylesheet">
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.0/css/bulma.css" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -77,7 +78,7 @@
                 <h3>'.$row['name_poem'].'</h3><br>
                 <pre><p>'.$row['text_poem'].'</p></pre><br>
                 <p>'.$row['name_author'].'</p>
-            </div>';}
+            </div><hr>';}
             $mysqli->close();
     ?>
     </main>

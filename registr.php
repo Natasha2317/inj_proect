@@ -53,7 +53,11 @@
         </form>
     </div>
     <?php else:
+    if($_COOKIE['user'] != 'admin'){
         $url = 'http://localhost/a/lk.php';
+    }else{
+        $url = 'http://localhost/a/lk_admin.php';
+    }
         header("Location: $url");?>
     <?php endif; ?>
     <?php

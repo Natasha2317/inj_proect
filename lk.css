@@ -8,6 +8,10 @@
 .lk_menu > input{
     width: 200px;
 }
+.lk_menu > input:hover{
+    background-color: black;
+    cursor: pointer;
+}
 .lk_menu > div > button{
     width: 200px;
 }
@@ -19,6 +23,10 @@
     text-align: center;
     margin: 20px auto;
     width: 90%;
+}
+.nav-menu {
+    padding-top: 30px;
+    height: 70px;
 }
 .my_poems > pre{
     font-family: "Playfair Display SC";
@@ -42,6 +50,9 @@ fieldset > form{
 .form__name_button > button{
     color: rgb(201, 163, 58);
 }
+.form__name_button > button:hover{
+    background-color: black;
+}
 .add{
     margin: 20px 90px;
 }
@@ -55,24 +66,20 @@ fieldset > form{
     text-align: right;
 }
 #delete_links{
-    margin-left: 300px;
-    margin-top: -50px;
-}
-#delete_links > button{
-    background-color: rgb(226, 48, 48);
-    border-radius: 5px;
-    border: 1px solid white;
-    margin-right: 7px;
-    width: 100px;
-    height: 25px;
-}
-#delete_links > button > a{
-    color: white;
-    text-decoration: none;
-}
-table td{
-    border: 1px solid black;
+    margin: 50px 200px;
     padding: 5px;
+}
+#delete_links > span{
+    padding: 10px;
+}
+table td, th{
+    border: 1px solid rgb(201, 163, 58);
+    padding: 5px;
+}
+th, td:first-child {
+    background: rgba(32, 32, 32, 0.87);
+    color:rgb(219, 180, 74);
+    padding: 10px 20px;
 }
 table{
     margin: 0 auto;
@@ -87,6 +94,40 @@ table{
 }
 .marg{
     margin-top: 40px;
+}
+@media print {
+    header{
+      display: none;
+    }
+    table{
+      min-height: 6cm;
+    }
+    table td, th{
+        border: 1px solid black;
+        padding: 5px;
+    }
+    th, td:first-child {
+        background: white;
+        color:rgb(0, 0, 0);
+        padding: 10px 20px;
+        }
+    .form__name_button{
+        display: none;
+    }
+    .form__name_button > button{
+        display: none;
+    }
+    .lk_menu{
+        display: none;
+    }
+    h2{
+      min-height: 1cm;
+      page-break-after: avoid;
+      margin-top: 0.5cm;
+    }
+    hr{
+      border-top: 1px solid black;
+    }
 }
 @media screen and (max-width: 1024px) {
     .form__name{
@@ -110,6 +151,11 @@ table{
     .nav-menu a {
         font-size: 1.2rem !important;
         margin-right: 17px;
+    }
+    #delete_links{
+        margin: 50px 150px;
+        width: 400px;
+        font-size: 12px;
     }
 }
 @media screen and (max-width: 647px) {
@@ -136,11 +182,30 @@ table{
         font-size: 1.2rem !important;
         margin-right: 18px;
     }
+    table{
+        font-size: 10px;
+    }
+    #delete_links{
+        margin: 50px 60px;
+        width: 380px;
+        font-size: 12px;
+    }
+    .nav-menu {
+        padding-top: 10px;
+        height: 50px;
+    }
 }
 @media screen and (max-width: 514px) {
     .nav-menu a {
         font-size: 0.88rem !important;
         margin-right: 15px;
+    }
+}
+@media screen and (max-width: 442px) {
+    #delete_links{
+        margin: 50px 20px;
+        width: 350px;
+        font-size: 12px;
     }
 }
 @media screen and (max-width: 383px) {
@@ -153,9 +218,24 @@ table{
         width: 90%;
     }
     table{
-        font-size: 10px;
+        font-size: 7px;
     }
     .itog{
         font-size: 10px;
     }
+    #delete_links{
+        margin: 50px 20px;
+        width: 300px;
+        font-size: 10px;
+    }
+    .nav-menu {
+        padding-top: 10px;
+        height: 40px;
+    }
 }
+@media screen and (max-width: 323px) {
+    .form__name_button > .button{
+        margin: 0;
+    }
+}
+

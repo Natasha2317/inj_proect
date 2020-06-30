@@ -7,7 +7,7 @@
             }
             $name_session = $_COOKIE['user'];
             $query = $mysqli->query("SELECT * FROM poems JOIN author ON poems.id_author=author.id_author WHERE name_author='$name_session'");
-            echo '<h2>Мои стихотворения</h2>';
+            echo '<h2 style="font-size: 22px;">Мои стихотворения</h2>';
 
             while ($row = mysqli_fetch_assoc($query)){
                 echo'

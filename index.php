@@ -1,13 +1,3 @@
-<!--
-$query = "INSERT INTO poems VALUES (NULL, 'loss','ffggggg','Потонула деревня в ухабинах') ";
-
-    $mysqli->query($query);
-
-    $query = $mysqli->query('SELECT * FROM poems');
-
-    while ($row = mysqli_fetch_assoc($query)){
-        echo $row['name_poem'].'<br><pre>'.$row['text_poem'].'</pre><br>'.$row['author_poem'].'<br>';
-    } -->
 <!doctype html>
 <html leng="EN">
 <head>
@@ -15,7 +5,8 @@ $query = "INSERT INTO poems VALUES (NULL, 'loss','ffggggg','Потонула д�
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="index.css?<?php echo time();?>">
-  	<link href="https://fonts.googleapis.com/css?family=PT+Sans|Playfair+Display+SC" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=PT+Sans|Playfair+Display+SC" rel="stylesheet">
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.0/css/bulma.css" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -32,37 +23,177 @@ $query = "INSERT INTO poems VALUES (NULL, 'loss','ffggggg','Потонула д�
             width: 100%;
             height: auto;
             }
+            .nav-menu {
+                padding-top: 30px;
+                height: 80px;
+            }
+            #app{
+                margin-top: 150px;
+                margin-bottom: 40px;
+                color: white;
+                background-color: black;
+                font-family: "Playfair Display SC", serif !important;
+                text-align: center;
+            }
+            .cards{
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-rows: 1fr;
+                width: 90%;
+                margin: 0 auto;
+                grid-column-gap: 10px;
+            }
+            .card__content, .card_image{
+                background-color: black;
+                color: white;
+            }
+            .card__content{
+                font-size: 17px;
+            }
+            .card__content > button > a{
+                color: black;
+            }
+            .card__title{
+                font-weight: 600;
+                margin-bottom: 10px;
+                font-size: 20px;
+            }
+            h1{
+                text-align: center;
+                margin-bottom: 20px;
+                font-size: 45px;
+            }
+            @media screen and (max-width: 768px) {
+                .cards{
+                    grid-template-columns: 1fr 1fr;
+                    grid-template-rows: 1fr 1fr;
+                }
+                .card__content{
+                    font-size: 15px;
+                }
+                .card__title{
+                    font-size: 17px;
+                }
+                h1{
+                    font-size: 35px;
+                }
+            }
+            @media screen and (max-width: 462px) {
+                .cards{
+                    grid-template-columns: 1fr;
+                    grid-template-rows: 1fr 1fr 1fr;
+                }
+                .card__content{
+                    font-size: 15px;
+                }
+                .card__title{
+                    font-size: 17px;
+                }
+                h1{
+                    font-size: 30px;
+                }
+            }
+            @media screen and (max-width: 376px) {
+                .cards{
+                    grid-template-columns: 1fr;
+                    grid-template-rows: 1fr 1fr 1fr;
+                }
+                #app{
+                    margin-top: 70px;
+                }
+                .card__content{
+                    font-size: 15px;
+                }
+                .card__title{
+                    font-size: 17px;
+                }
+                h1{
+                    font-size: 22px;
+                }
+            }
         </style>
-    <?php
-
-    if (isset($_POST['name_poem']) && isset($_POST['text']) && isset($_POST['author'])){
-
-        // Переменные с формы
-        $name_poem = $_POST['name_poem'];
-        $text = $_POST['text'];
-        $author = $_POST['author'];
-
-        // Параметры для подключения
-        $mysqli = new mysqli('localhost', 'root', '', 'my_bd');
-
-        if (mysqli_connect_error()){
-            prinf("Соединение не установлено", mysqli_connect_error());
-            exit();
-        }
-        $query = "INSERT INTO poems VALUES (NULL, '$name_poem','$author', '$text') ";
-        $mysqli->query($query);
-
-        $query = $mysqli->query('SELECT * FROM poems ');
-
-        while ($row = mysqli_fetch_assoc($query)){
-            echo $row['name_poem'].'<br><pre>'.$row['text_poem'].'</pre><br>'.$row['author_poem'].'<br>';
-        }
-
-        $mysqli->close();
-    }
-    ?>
     </div>
+    <div id="app">
+        <h1>{{ header_name }}</h1>
+        <div class="main">
+            <ul class="cards">
+                <li class="cards_item" v-for="product in products" id="product.id">
+                    <div class="card">
+                        <div class="card__image"><img v-bind:src="product.img"></div>
+                        <div class="card__content">
+                            <h2 class="card__title">{{ product.title }}</h2>
+                            <p class="card__text">{{ product.text }}</p><br>
+                            <button class="button is-warning"><a v-bind:href="product.link" class="btn">{{ btn.title }}</a></button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            header_name: 'Наши перимущества',
+            btn: {
+                title: 'Вперёд',
+            },
+            products: [{
+                    id: '1a',
+                    title: 'Современные поэты',
+                    text: 'На нашем сайте вы найдете стихи только лучших своременных поэтов',
+                    link: 'authors.php',
+                    img: 'img/1.jpg'
+                },
+                {
+                    id: '2b',
+                    title: 'Возможность стать известным',
+                    text: 'После регистрации в качестве "автора" вы можете публиковать свои стихи',
+                    link: 'registr.php',
+                    img: 'img/3.jpg'
+                },
+                {
+                    id: '3c',
+                    title: 'Лучшие стихи',
+                    text: 'Все стихи распределены по категориям, можете выбрать то,что вам интересно',
+                    link: 'category.php',
+                    img: 'img/2.jpg'
+                },
+            ],
+        }
+    })
+    </script>
+        <?php
+
+            if (isset($_POST['name_poem']) && isset($_POST['text']) && isset($_POST['author'])){
+
+            // Переменные с формы
+            $name_poem = $_POST['name_poem'];
+            $text = $_POST['text'];
+            $author = $_POST['author'];
+
+            // Параметры для подключения
+            $mysqli = new mysqli('localhost', 'root', '', 'my_bd');
+
+            if (mysqli_connect_error()){
+                prinf("Соединение не установлено", mysqli_connect_error());
+                exit();
+            }
+            $query = "INSERT INTO poems VALUES (NULL, '$name_poem','$author', '$text') ";
+            $mysqli->query($query);
+
+            $query = $mysqli->query('SELECT * FROM poems ');
+
+            while ($row = mysqli_fetch_assoc($query)){
+                echo $row['name_poem'].'<br><pre>'.$row['text_poem'].'</pre><br>'.$row['author_poem'].'<br>';
+            }
+
+            $mysqli->close();
+        }
+        ?>
     </main>
+    <footer></footer>
 </body>
 </html>
 

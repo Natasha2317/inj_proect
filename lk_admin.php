@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="lk.css?<?php echo time();?>">
-  	<link href="https://fonts.googleapis.com/css?family=PT+Sans|Playfair+Display+SC" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=PT+Sans|Playfair+Display+SC" rel="stylesheet">
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.0/css/bulma.css" rel="stylesheet">
+      <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"></script>
 </head>
 <body>
     <header>
@@ -17,7 +20,6 @@
         </nav>
     </header>
     <main>
-
         <div>
         <form class="lk_menu" method="post">
             <input type="submit" value="Все стихи" name ="admin_my_poem" class="form__button">
@@ -39,7 +41,7 @@
             }
             $name_session = $_COOKIE['user'];
             $query = $mysqli->query("SELECT * FROM poems JOIN author ON poems.id_author=author.id_author");
-            echo '<h2>Все стихотворения</h2>';
+            echo '<h2 style="font-size: 22px;">Все стихотворения</h2>';
 
             while ($row = mysqli_fetch_assoc($query)){
                 echo'
@@ -66,12 +68,12 @@
             }
             $query = $mysqli->query("SELECT name_user, email, name_status FROM status JOIN users
             ON (status.id_status=users.status)");
-            echo '<h2>Данные</h2>';
+            echo '<h2 style="font-size: 30px;">Данные</h2>';
 
             echo'<table><tr>
-                <td>Имя польз.</td>
-                <td>Email</td>
-                <td>Статус</td>
+                <th style="color:rgb(219, 180, 74);  padding: 10px 20px;">Имя польз.</th>
+                <th style="color:rgb(219, 180, 74);  padding: 10px 20px;">Email</th>
+                <th style="color:rgb(219, 180, 74);  padding: 10px 20px;">Статус</th>
                 </tr>';
 
             while ($row = mysqli_fetch_assoc($query)){
@@ -94,6 +96,7 @@
     <?php else:
                 echo ''; ?>
     <?php endif; ?>
+    </style>
     </main>
 </body>
 </html>

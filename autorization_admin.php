@@ -75,5 +75,6 @@ if (isset($_POST['in_admin'])){
     //$mysqli->close();
 }
     ?>
+<footer></footer>
 </body>
 </html>

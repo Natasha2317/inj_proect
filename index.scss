@@ -1,0 +1,113 @@
+html {
+	width: 100%;
+	min-height: 1000px;
+}
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	margin: 0;
+	padding: 0;
+	min-height: 200vh;
+	font-family: "Playfair Display SC";
+	background-color: black;
+}
+main {
+	min-height: 141vh;
+	width: 100%;
+}
+.nav-menu {
+	background-color: rgb(32, 32, 32) !important;
+	width: 100%;
+	height: 80px;
+	text-align: right;
+	vertical-align: middle;
+	padding-top: 30px;
+	a {
+		text-decoration: none;
+		color: white;
+		margin-right: 50px;
+		font-size: 1.4rem !important;
+		font-family: "Playfair Display SC", serif !important;
+		&:hover {
+			color: rgb(201, 163, 58);
+		}
+		&:active {
+			color: rgb(201, 163, 58);
+		}
+		&:focus {
+			color: rgb(201, 163, 58);
+		}
+	}
+}
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	border: 0;
+	padding: 0;
+	clip: rect(0 0 0 0);
+	overflow: hidden;
+}
+.warning {
+	color: red;
+}
+footer {
+	height: 40px;
+	background-color: rgb(32, 32, 32);
+}
+@media screen and (max-width: 768px) {
+	.nav-menu {
+		a {
+			font-size: 1.2rem !important;
+			margin-right: 17px;
+		}
+	}
+	.cards {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr 1fr;
+	}
+	.card_content {
+		font-size: 15px;
+	}
+	.card_title {
+		font-size: 17px;
+	}
+	h1 {
+		font-size: 35px;
+	}
+}
+@media screen and (max-width: 557px) {
+	.nav-menu {
+		a {
+			font-size: 0.8rem !important;
+			margin-right: 15px;
+			margin-top: -10px;
+		}
+		height: 45px;
+		padding-top: 10px;
+	}
+}
+@media screen and (max-width: 462px) {
+	.nav-menu {
+		a {
+			font-size: 0.71rem !important;
+			margin-right: 13px;
+		}
+		height: 40px;
+		padding-top: -10px;
+	}
+}
+@media screen and (max-width: 376px) {
+	.nav-menu {
+		a {
+			font-size: 0.65rem !important;
+			margin-right: 12px;
+		}
+		height: 35px;
+		padding-top: 10px;
+	}
+}

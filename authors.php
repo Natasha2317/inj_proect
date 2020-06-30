@@ -29,10 +29,11 @@
                 while ($row = mysqli_fetch_assoc($query)){
                     echo'
                     <ul><li>'.$row['name_author'].'</li>
-                    </ul>';}
+                    </ul>';
+                }
 
-         // выводим сообщение об ошибке
-?>
+    ?>
     </main>
+    <footer></footer>
 </body>
 </html>

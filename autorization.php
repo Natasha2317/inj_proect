@@ -75,9 +75,8 @@
         $mysqli->close();
         $url = 'http://localhost/a/autorization.php';
         header("Location: $url");
-        //setcookie("user", $user['name'], time()+3600,"/");
-        //$mysqli->close();
     }
         ?>
+    <footer></footer>
 </body>
 </html>
