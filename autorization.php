@@ -51,7 +51,7 @@
     </div>
     <?php else:
         $url = 'http://podaite.std-946.ist.mospolytech.ru/lk.php';
-        header("$url");?>
+        header("Location: $url");?>
     <?php endif; ?>
     </main>
     <?php
@@ -80,7 +80,7 @@
         setcookie("user", $user['name_user'], time() + 3600 * 10, "/");
         $mysqli->close();
         $url = 'http://podaite.std-946.ist.mospolytech.ru/autorization.php';
-        header("$url");
+        header("Location: $url");
     }
         ?>
     <footer></footer>
