@@ -7,8 +7,6 @@
     <link rel="stylesheet" href="lk.css?<?php echo time();?>">
       <link href="https://fonts.googleapis.com/css?family=PT+Sans|Playfair+Display+SC" rel="stylesheet">
       <link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.0/css/bulma.css" rel="stylesheet">
-      <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-    <script src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"></script>
 </head>
 <body>
     <header>
@@ -20,9 +18,13 @@
                 if(!isset($_COOKIE['user'])):
             ?>
             <a href="registr.php" role="menuitem">Личный кабинет</a>
-            <?php else: ?>
-            <a href="lk.php" role="menuitem">Личный кабинет</a>
-            <?php endif; ?>         
+            <?php else: 
+            if ($_COOKIE['user'] = 'admin'){
+             echo '<a href="lk_admin.php" role="menuitem">Личный кабинет</a>'
+            }else{
+            echo '<a href="lk.php" role="menuitem">Личный кабинет</a>'
+            }
+            ?>         
         </nav>
     </header>
     <main>
