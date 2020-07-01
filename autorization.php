@@ -44,7 +44,7 @@
         </form>
     </div>
     <?php else:
-        $url = 'http://localhost/a/lk.php';
+        $url = 'lk.php';
         header("Location: $url");?>
     <?php endif; ?>
     </main>
