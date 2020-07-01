@@ -164,34 +164,6 @@
         }
     })
     </script>
-        <?php
-
-            if (isset($_POST['name_poem']) && isset($_POST['text']) && isset($_POST['author'])){
-
-            // Переменные с формы
-            $name_poem = $_POST['name_poem'];
-            $text = $_POST['text'];
-            $author = $_POST['author'];
-
-            // Параметры для подключения
-            $mysqli = new mysqli('localhost', 'root', '', 'my_bd');
-
-            if (mysqli_connect_error()){
-                prinf("Соединение не установлено", mysqli_connect_error());
-                exit();
-            }
-            $query = "INSERT INTO poems VALUES (NULL, '$name_poem','$author', '$text') ";
-            $mysqli->query($query);
-
-            $query = $mysqli->query('SELECT * FROM poems ');
-
-            while ($row = mysqli_fetch_assoc($query)){
-                echo $row['name_poem'].'<br><pre>'.$row['text_poem'].'</pre><br>'.$row['author_poem'].'<br>';
-            }
-
-            $mysqli->close();
-        }
-        ?>
     </main>
     <footer></footer>
 </body>

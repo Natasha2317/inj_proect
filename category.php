@@ -32,7 +32,7 @@
         </form>
         </div>
         <?php
-            $mysqli = new mysqli('localhost', 'root', '', 'my_bd');
+            $mysqli = new mysqli('std-mysql', 'std_946', 'cisco12345', 'std_946');
             $category = 0;
 
             if (mysqli_connect_error()){

@@ -73,7 +73,7 @@
         $name_user = $_COOKIE['user'];
 
         // Параметры для подключения
-        $mysqli = new mysqli('localhost', 'root', '', 'my_bd');
+        $mysqli = new mysqli('std-mysql', 'std_946', 'cisco12345', 'std_946');
 
         if (mysqli_connect_error()){
             prinf("Соединение не установлено", mysqli_connect_error());

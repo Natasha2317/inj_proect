@@ -33,8 +33,7 @@
             if(isset($_POST['admin_my_poem'])):
         ?>
         <?php
-            $mysqli = new mysqli('localhost', 'root', '', 'my_bd');
-
+            $mysqli = new mysqli('std-mysql', 'std_946', 'cisco12345', 'std_946');
             if (mysqli_connect_error()){
                 prinf("Соединение не установлено", mysqli_connect_error());
                 exit();
@@ -60,7 +59,7 @@
 
     <?php if(isset($_POST['admin_count_user']) && !isset($_POST['admin_my_poem'])): ?>
     <?php
-            $mysqli = new mysqli('localhost', 'root', '', 'my_bd');
+            $mysqli = new mysqli('std-mysql', 'std_946', 'cisco12345', 'std_946');
 
             if (mysqli_connect_error()){
                 prinf("Соединение не установлено", mysqli_connect_error());
