@@ -44,8 +44,8 @@
         </form>
     </div>
     <?php else:
-        $url = 'lk.php';
-        header("Location: $url");?>
+        $url = 'http://podaite.std-946.ist.mospolytech.ru/lk.php';
+        header("$url");?>
     <?php endif; ?>
     </main>
     <?php
