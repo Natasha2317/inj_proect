@@ -16,7 +16,13 @@
             <a href="index.php" aria-current="page" role="menuitem">Главная</a>
             <a href="category.php" role="menuitem">Категории</a>
             <a href="authors.php" role="menuitem">Авторы</a>
-            <a href="lk_admin.php" role="menuitem"><span class="visually-hidden">Текущий пункт:</span>Админ</a>
+            <?php
+                if(!isset($_COOKIE['user'])):
+            ?>
+            <a href="registr.php" role="menuitem">Личный кабинет</a>
+            <?php else: ?>
+            <a href="lk.php" role="menuitem">Личный кабинет</a>
+            <?php endif; ?>         
         </nav>
     </header>
     <main>
