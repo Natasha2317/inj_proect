@@ -41,8 +41,8 @@
         </form>
     </div>
     <?php else:
-        $url = 'http://localhost/a/lk_admin.php';
-        header("Location: $url");?>
+        $url = 'http://podaite.std-946.ist.mospolytech.ru/lk_admin.php';
+        header("$url");?>
     <?php endif; ?>
     </main>
     <?php
@@ -69,8 +69,8 @@ if (isset($_POST['in_admin'])){
     }
     setcookie("user", $user['name_user'], time() + 3600* 10, "/");
     $mysqli->close();
-    $url = 'http://localhost/a/autorization_admin.php';
-    header("Location: $url");
+    $url = 'http://podaite.std-946.ist.mospolytech.ru/autorization_admin.php';
+    header("$url");
     //setcookie("user", $user['name'], time()+3600,"/");
     //$mysqli->close();
 }
