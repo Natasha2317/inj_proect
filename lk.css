@@ -210,7 +210,7 @@ table{
 }
 @media screen and (max-width: 383px) {
     .nav-menu a {
-        font-size: 0.7rem !important;
+        font-size: 0.63rem !important;
         margin-right: 13px;
     }
     .my_poems{
