@@ -18,13 +18,8 @@
                 if(!isset($_COOKIE['user'])):
             ?>
             <a href="registr.php" role="menuitem">Личный кабинет</a>
-            <?php else: 
-            if ($_COOKIE['user'] = 'admin'){
-             echo '<a href="lk_admin.php" role="menuitem">Личный кабинет</a>'
-            }else{
-            echo '<a href="lk.php" role="menuitem">Личный кабинет</a>'
-            }
-            ?>
+            <?php else: ?>
+            <a href="lk.php" role="menuitem">Личный кабинет</a>
             <?php endif; ?>
         </nav>
     </header>
