@@ -71,7 +71,7 @@
             echo "<p class='warning'>Такой пользователь не найден или</p><p class='warning reader'> вы читатель</p><p class='warning good'>(Приятного чтения!)</p>";
             exit;
         }
-        setcookie("user", $user['name_user'], time() + 3600* 10, "/");
+        setcookie("user", $user['name_user'], time() + 3600 * 10, "/");
         $mysqli->close();
         $url = 'http://podaite.std-946.ist.mospolytech.ru/autorization.php';
         header("$url");
