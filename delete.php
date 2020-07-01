@@ -46,11 +46,11 @@
         $query = $mysqli->query("DELETE FROM poems_category WHERE id_poem='$get_id'");
         $query = $mysqli->query("DELETE FROM poems WHERE id_poem='$get_id'");
     }
-    if ($name_session != 'admin'){
-        $query = $mysqli->query("SELECT * FROM poems JOIN author ON poems.id_author=author.id_author WHERE name_author='$name_session'");}
-    else{
+    if ($name_session = 'admin'){
     $query = $mysqli->query("SELECT * FROM poems JOIN author ON poems.id_author=author.id_author");
-        if($query) // если запрос успешно выполнен
+    }else{
+    $query = $mysqli->query("SELECT * FROM poems JOIN author ON poems.id_author=author.id_author WHERE name_author='$name_session'");}
+    if($query) // если запрос успешно выполнен
     {
         echo '<div id="delete_links">';
         while( $row=mysqli_fetch_row($query) ) // перебираем все записи и добавялем к ним "кнопку" удаления
