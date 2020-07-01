@@ -58,7 +58,7 @@
     }else{
         $url = 'http://podaite.std-946.ist.mospolytech.ru/lk_admin.php';
     }
-        header("Location: $url");?>
+        header("$url");?>
     <?php endif; ?>
     <?php
     if (isset($_POST['reg'])){
@@ -119,7 +119,7 @@
                 $mysqli->query($query);
 
                     $url = 'http://podaite.std-946.ist.mospolytech.ru/registr.php';
-                    header("Location: $url");
+                    header("$url");
 
                     $mysqli->close();
                 }

@@ -71,8 +71,7 @@ if (isset($_POST['in_admin'])){
     $mysqli->close();
     $url = 'http://podaite.std-946.ist.mospolytech.ru/autorization_admin.php';
     header("$url");
-    //setcookie("user", $user['name'], time()+3600,"/");
-    //$mysqli->close();
+
 }
     ?>
 <footer></footer>
