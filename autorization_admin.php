@@ -48,7 +48,7 @@
     </div>
     <?php else:
         $url = 'http://podaite.std-946.ist.mospolytech.ru/lk_admin.php';
-        header("$url");?>
+        header("Location: $url");?>
     <?php endif; ?>
     </main>
     <?php
