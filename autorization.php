@@ -73,8 +73,8 @@
         }
         setcookie("user", $user['name_user'], time() + 3600* 10, "/");
         $mysqli->close();
-        $url = 'http://localhost/a/autorization.php';
-        header("Location: $url");
+        $url = 'http://podaite.std-946.ist.mospolytech.ru/autorization.php';
+        header("$url");
     }
         ?>
     <footer></footer>

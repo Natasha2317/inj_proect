@@ -54,9 +54,9 @@
     </div>
     <?php else:
     if($_COOKIE['user'] != 'admin'){
-        $url = 'http://localhost/a/lk.php';
+        $url = 'http://podaite.std-946.ist.mospolytech.ru/lk.php';
     }else{
-        $url = 'http://localhost/a/lk_admin.php';
+        $url = 'http://podaite.std-946.ist.mospolytech.ru/lk_admin.php';
     }
         header("Location: $url");?>
     <?php endif; ?>
@@ -118,7 +118,7 @@
                 $query = "INSERT INTO session VALUES (NULL, '$id_user', '$date') ";
                 $mysqli->query($query);
 
-                    $url = 'http://localhost/a/registr.php';
+                    $url = 'http://podaite.std-946.ist.mospolytech.ru/registr.php';
                     header("Location: $url");
 
                     $mysqli->close();
