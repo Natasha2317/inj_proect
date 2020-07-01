@@ -26,7 +26,8 @@
             }else{
             echo '<a href="lk.php" role="menuitem">Личный кабинет</a>'
             }
-            ?>       
+            ?> 
+            <?php endif; ?>      
         </nav>
     </header>
     <main>
