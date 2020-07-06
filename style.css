@@ -154,11 +154,17 @@ ul{
         font-size: 1.2rem !important;
         margin-right: 17px;
     }
+    .nav-menu{
+        height: 70px;
+    }
 }
 @media screen and (max-width: 570px) {
     .nav-menu a {
         font-size: 0.8rem !important;
         margin-right: 20px;
+    }
+    .nav-menu{
+        height: 50px;
     }
     textarea{
         width: 220px;
