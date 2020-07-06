@@ -17,11 +17,17 @@
             <a href="category.php" role="menuitem">Категории</a>
             <a href="authors.php" role="menuitem">Авторы</a>
             <?php
+                if(isset($_COOKIE['user']) == 'admin'):
+            ?>
+            <a href="lk_admin.php" role="menuitem">Личный кабинет</a>
+            <?php else: ?>
+            <a href="lk.php" role="menuitem">Личный кабинет</a>
+            <?php endif; ?>
+            <?php
                 if(!isset($_COOKIE['user'])):
             ?>
             <a href="registr.php" role="menuitem">Личный кабинет</a>
-            <?php else: ?>
-            <a href="lk.php" role="menuitem">Личный кабинет</a>
+            <?php else: echo' '?>
             <?php endif; ?>     
         </nav>
     </header>
