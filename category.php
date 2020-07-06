@@ -15,18 +15,14 @@
             <a href="category.php" role="menuitem">Категории</a>
             <a href="authors.php" role="menuitem">Авторы</a>
             <?php
-                if(isset($_COOKIE['user']) == 'admin'):
+                if(isset($_COOKIE['user']) == 'admin'){
+                    echo '<a href="lk_admin.php" role="menuitem">Личный кабинет</a>';
+                }else if(isset($_COOKIE['user'])){
+                    echo'<a href="lk.php" role="menuitem">Личный кабинет</a>';
+                }else{
+                    echo'<a href="registr.php" role="menuitem">Личный кабинет</a>';
+                }
             ?>
-            <a href="lk_admin.php" role="menuitem">Личный кабинет</a>
-            <?php else: ?>
-            <a href="lk.php" role="menuitem">Личный кабинет</a>
-            <?php endif; ?>
-            <?php
-                if(!isset($_COOKIE['user'])):
-            ?>
-            <a href="registr.php" role="menuitem">Личный кабинет</a>
-            <?php else: echo' '?>
-            <?php endif; ?>
         </nav>
     </header>
         <div>
