@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Подайте на слово</title>
     <link rel="stylesheet" href="lk.css?<?php echo time();?>">
       <link href="https://fonts.googleapis.com/css?family=PT+Sans|Playfair+Display+SC" rel="stylesheet">
       <link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.0/css/bulma.css" rel="stylesheet">
@@ -46,10 +46,10 @@
         $query = $mysqli->query("DELETE FROM poems_category WHERE id_poem='$get_id'");
         $query = $mysqli->query("DELETE FROM poems WHERE id_poem='$get_id'");
     }
-    if ($name_session = 'admin'){
-    $query = $mysqli->query("SELECT * FROM poems JOIN author ON poems.id_author=author.id_author");
+    if ($name_session != 'admin'){
+    $query = $mysqli->query("SELECT * FROM poems JOIN author ON poems.id_author=author.id_author WHERE name_author='$name_session'");
     }else{
-    $query = $mysqli->query("SELECT * FROM poems JOIN author ON poems.id_author=author.id_author WHERE name_author='$name_session'");}
+    $query = $mysqli->query("SELECT * FROM poems JOIN author ON poems.id_author=author.id_author ");}
     if($query) // если запрос успешно выполнен
     {
         echo '<div id="delete_links">';
