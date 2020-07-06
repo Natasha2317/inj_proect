@@ -16,7 +16,7 @@
             <a href="authors.php" role="menuitem">Авторы</a>
             <?php
                 $user = $_COOKIE['user'];
-                if($user = 'admin'){
+                if($user == 'admin'){
                     echo '<a href="lk_admin.php" role="menuitem">Личный кабинет</a>';
                 }else if(isset($_COOKIE['user'])){
                     echo'<a href="lk.php" role="menuitem">Личный кабинет</a>';
