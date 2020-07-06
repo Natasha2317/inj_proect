@@ -68,7 +68,6 @@
             $query = $mysqli->query("SELECT * FROM poems JOIN author ON poems.id_author=author.id_author and name_author='$name_session'");
             $currentROW=mysqli_fetch_row($query);}
         }
-        // формируем и выполняем запрос для получения требуемых полей всех записей таблицы
         if($query) // если запрос успешно выполнен
         {
             while( $row=mysqli_fetch_row($query) ) // перебираем все записи выборки
