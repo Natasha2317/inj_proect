@@ -19,7 +19,7 @@
             <a href="registr.php" role="menuitem">Личный кабинет</a>
             <?php else: ?>
             <a href="lk.php" role="menuitem">Личный кабинет</a>
-            <?php endif; ?>     
+            <?php endif; ?>
         </nav>
     </header>
     <main>
@@ -55,7 +55,7 @@
         if( isset($_GET['id']) ) // (переход по ссылке или отправка формы)
         {
             $get_id = $_GET['id'];
-            if ($name_session = 'admin'){
+            if ($name_session == 'admin'){
                 $query = $mysqli->query("SELECT * FROM poems JOIN author ON poems.id_author=author.id_author WHERE id_poem='$get_id'");
                 $currentROW=mysqli_fetch_row($query);
             }else{
@@ -65,7 +65,7 @@
             }
         if( !$currentROW ) // если информации о текущей записи нет или она некорректна
         {
-            if ($name_session = 'admin'){
+            if ($name_session == 'admin'){
                 $query = $mysqli->query("SELECT * FROM poems JOIN author ON poems.id_author=author.id_author");
                 $currentROW=mysqli_fetch_row($query);
             }

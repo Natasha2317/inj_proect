@@ -18,7 +18,6 @@
                 if(!isset($_COOKIE['user'])):
             ?>
             <a href="registr.php" role="menuitem">Личный кабинет</a>
-            <a href="registr.php" role="menuitem">Личный кабинет</a>
             <?php else: ?>
             <a href="lk.php" role="menuitem">Личный кабинет</a>
             <?php endif; ?>
